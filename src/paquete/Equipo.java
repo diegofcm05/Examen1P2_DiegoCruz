@@ -21,10 +21,9 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombre, String pais, int rating) {
+    public Equipo(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
-        this.rating = rating;
     }
 
     public String getNombre() {
@@ -47,8 +46,17 @@ public class Equipo {
         return rating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRating() {
+        int acum = 0;
+        if (plantilla.isEmpty()){
+            rating = 0;
+        }
+        else{
+            for (Jugador jugador : plantilla) {
+                acum+= jugador.getRating();
+            }
+            rating = acum/plantilla.size();
+        }
     }
 
     public ArrayList<Jugador> getPlantilla() {

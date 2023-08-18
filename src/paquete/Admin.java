@@ -27,21 +27,221 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_main = new javax.swing.JPanel();
+        jb_modificarequipo = new javax.swing.JButton();
+        jb_simular = new javax.swing.JButton();
+        jb_elimjugador = new javax.swing.JButton();
+        jb_modificarestadio = new javax.swing.JButton();
+        jb_modificarjugador = new javax.swing.JButton();
+        jb_agregarestadio = new javax.swing.JButton();
+        jb_agregarequipo = new javax.swing.JButton();
+        jb_addjugador = new javax.swing.JButton();
+        jb_elimequipo = new javax.swing.JButton();
+        jb_elimestadio = new javax.swing.JButton();
+        jb_listar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jp_addjug = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jl_fondo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jp_main.setBackground(new java.awt.Color(255, 255, 255));
+        jp_main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jb_modificarequipo.setBackground(new java.awt.Color(0, 51, 51));
+        jb_modificarequipo.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_modificarequipo.setForeground(new java.awt.Color(255, 255, 255));
+        jb_modificarequipo.setText("Modificar Equipo");
+        jp_main.add(jb_modificarequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 140, 30));
+
+        jb_simular.setBackground(new java.awt.Color(0, 51, 51));
+        jb_simular.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_simular.setForeground(new java.awt.Color(255, 255, 255));
+        jb_simular.setText("Simulacion");
+        jp_main.add(jb_simular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 140, 30));
+
+        jb_elimjugador.setBackground(new java.awt.Color(0, 51, 51));
+        jb_elimjugador.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_elimjugador.setForeground(new java.awt.Color(255, 255, 255));
+        jb_elimjugador.setText("Eliminar Jugador");
+        jp_main.add(jb_elimjugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 140, 30));
+
+        jb_modificarestadio.setBackground(new java.awt.Color(0, 51, 51));
+        jb_modificarestadio.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_modificarestadio.setForeground(new java.awt.Color(255, 255, 255));
+        jb_modificarestadio.setText("Modificar Estadio");
+        jp_main.add(jb_modificarestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 140, 30));
+
+        jb_modificarjugador.setBackground(new java.awt.Color(0, 51, 51));
+        jb_modificarjugador.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_modificarjugador.setForeground(new java.awt.Color(255, 255, 255));
+        jb_modificarjugador.setText("Modificar Jugador");
+        jb_modificarjugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_modificarjugadorActionPerformed(evt);
+            }
+        });
+        jp_main.add(jb_modificarjugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 140, 30));
+
+        jb_agregarestadio.setBackground(new java.awt.Color(0, 51, 51));
+        jb_agregarestadio.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_agregarestadio.setForeground(new java.awt.Color(255, 255, 255));
+        jb_agregarestadio.setText("Agregar Estadio");
+        jp_main.add(jb_agregarestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 140, 30));
+
+        jb_agregarequipo.setBackground(new java.awt.Color(0, 51, 51));
+        jb_agregarequipo.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_agregarequipo.setForeground(new java.awt.Color(255, 255, 255));
+        jb_agregarequipo.setText("Agregar Equipo");
+        jp_main.add(jb_agregarequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 30));
+
+        jb_addjugador.setBackground(new java.awt.Color(0, 51, 51));
+        jb_addjugador.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_addjugador.setForeground(new java.awt.Color(255, 255, 255));
+        jb_addjugador.setText("Agregar Jugador");
+        jb_addjugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_addjugadorActionPerformed(evt);
+            }
+        });
+        jp_main.add(jb_addjugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 140, 30));
+
+        jb_elimequipo.setBackground(new java.awt.Color(0, 51, 51));
+        jb_elimequipo.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_elimequipo.setForeground(new java.awt.Color(255, 255, 255));
+        jb_elimequipo.setText("Eliminar Equipo");
+        jp_main.add(jb_elimequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 140, 30));
+
+        jb_elimestadio.setBackground(new java.awt.Color(0, 51, 51));
+        jb_elimestadio.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_elimestadio.setForeground(new java.awt.Color(255, 255, 255));
+        jb_elimestadio.setText("Eliminar Estadio");
+        jb_elimestadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_elimestadioActionPerformed(evt);
+            }
+        });
+        jp_main.add(jb_elimestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 140, 30));
+
+        jb_listar.setBackground(new java.awt.Color(0, 51, 51));
+        jb_listar.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
+        jb_listar.setForeground(new java.awt.Color(255, 255, 255));
+        jb_listar.setText("Listar");
+        jp_main.add(jb_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 140, 30));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("FIFA MENU");
+        jp_main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 30));
+
+        jp_addjug.setBackground(new java.awt.Color(0, 153, 204));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Agregar Jugador");
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Nombre");
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Edad");
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Nacionalidad");
+
+        javax.swing.GroupLayout jp_addjugLayout = new javax.swing.GroupLayout(jp_addjug);
+        jp_addjug.setLayout(jp_addjugLayout);
+        jp_addjugLayout.setHorizontalGroup(
+            jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jp_addjugLayout.createSequentialGroup()
+                .addGap(192, 192, 192)
+                .addGroup(jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jp_addjugLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_addjugLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_addjugLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        jp_addjugLayout.setVerticalGroup(
+            jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_addjugLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jp_addjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(280, Short.MAX_VALUE))
+        );
+
+        jp_main.add(jp_addjug, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 690, 520));
+
+        jl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/paquete/fut.jpg"))); // NOI18N
+        jl_fondo.setText("jLabel1");
+        jp_main.add(jl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-230, 0, 1130, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addComponent(jp_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addComponent(jp_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jb_addjugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addjugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_addjugadorActionPerformed
+
+    private void jb_modificarjugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificarjugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_modificarjugadorActionPerformed
+
+    private void jb_elimestadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_elimestadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_elimestadioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +279,27 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton jb_addjugador;
+    private javax.swing.JButton jb_agregarequipo;
+    private javax.swing.JButton jb_agregarestadio;
+    private javax.swing.JButton jb_elimequipo;
+    private javax.swing.JButton jb_elimestadio;
+    private javax.swing.JButton jb_elimjugador;
+    private javax.swing.JButton jb_listar;
+    private javax.swing.JButton jb_modificarequipo;
+    private javax.swing.JButton jb_modificarestadio;
+    private javax.swing.JButton jb_modificarjugador;
+    private javax.swing.JButton jb_simular;
+    private javax.swing.JLabel jl_fondo;
+    private javax.swing.JPanel jp_addjug;
+    private javax.swing.JPanel jp_main;
     // End of variables declaration//GEN-END:variables
 }
