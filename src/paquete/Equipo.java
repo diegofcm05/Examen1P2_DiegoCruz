@@ -24,6 +24,7 @@ public class Equipo {
     public Equipo(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
+        setRating();
     }
 
     public String getNombre() {

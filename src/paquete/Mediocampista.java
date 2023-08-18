@@ -28,6 +28,11 @@ public class Mediocampista extends Jugador{
         setDisparo();
         setRating();
     }
+
+    public Mediocampista() {
+    }
+    
+    
     
     
 

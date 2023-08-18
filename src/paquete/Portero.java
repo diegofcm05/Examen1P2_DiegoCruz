@@ -14,6 +14,11 @@ public class Portero extends Jugador{
     
     Random ran = new Random();
 
+    public Portero() {
+    }
+    
+    
+
     public Portero(String nombre, String nacionalidad, String pieh, int edad) {
         super(nombre, nacionalidad, pieh, edad);
         

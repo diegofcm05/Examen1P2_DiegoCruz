@@ -29,6 +29,11 @@ public class Defensa extends Jugador{
         setRating();
     }
 
+    public Defensa() {
+    }
+    
+    
+
     @Override
     public void setRating() {
         rating = (agarre+lanzamiento+fisico+ritmo+entrada+vision+passing+regate+disparo)/9;
