@@ -70,7 +70,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo: [Nombre: "+nombre+"]" + "[Pais: "+pais+"]" + "[Rating: "+rating+"]";
+        return "Equipo: [Nombre: "+nombre+"] " + "[Pais: "+pais+"] " + "[Rating: "+rating+"]";
     }
     
     
