@@ -4,18 +4,22 @@
  */
 package paquete;
 
+import java.util.Random;
+
 /**
  *
  * @author dfcm9
  */
 public class Delantero extends Jugador{
+    
+    Random ran = new Random();
 
     public Delantero() {
     }
 
     public Delantero(String nombre, String nacionalidad, String pieh, int edad) {
         super(nombre, nacionalidad, pieh, edad);
-        setRating();
+        
         setAgarre();
         setLanzamiento();
         setFisico();
@@ -25,58 +29,90 @@ public class Delantero extends Jugador{
         setPassing();
         setRegate();
         setDisparo();
+        setRating();
     }
     
     
 
     @Override
     public void setRating() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        rating = (agarre+lanzamiento+fisico+ritmo+entrada+vision+passing+regate+disparo)/9;
+        
     }
 
     @Override
     public void setAgarre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        agarre =x;
+     
     }
 
     @Override
     public void setLanzamiento() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        lanzamiento =x;
+   
     }
 
     @Override
     public void setFisico() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        fisico =x;
+        
     }
 
     @Override
     public void setRitmo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ ran.nextInt(12))*12;
+        while (x<70 || x>100){
+            x = (1+ ran.nextInt(12))*12;
+            
+        }
+        ritmo =x; 
+   
     }
 
     @Override
     public void setEntrada() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        entrada =x;
+   
     }
 
     @Override
     public void setVision() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        vision =x;
+  
     }
 
     @Override
     public void setPassing() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ran.nextInt(5))*13;
+        passing =x;
+   
     }
 
     @Override
     public void setRegate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ ran.nextInt(12))*12;
+        while (x<70 || x>100){
+            x = (1+ ran.nextInt(12))*12;
+            
+        }
+        regate =x; 
+   
     }
 
     @Override
     public void setDisparo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int x = (1+ ran.nextInt(12))*12;
+        while (x<70 || x>100){
+            x = (1+ ran.nextInt(12))*12;
+            
+        }
+        disparo =x; 
+    
     }
     
     
