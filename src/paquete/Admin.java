@@ -1,9 +1,9 @@
 package paquete;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,6 +20,7 @@ public class Admin extends javax.swing.JFrame {
     ArrayList<Equipo> equipos = new ArrayList();
     ArrayList<Estadio> estadios = new ArrayList();
     ArrayList<Jugador> jugadores = new ArrayList();
+    Random ran = new Random();
     
 
     /**
@@ -27,13 +28,17 @@ public class Admin extends javax.swing.JFrame {
      */
     public Admin() {
         initComponents();
+        jp_elimequipo.setVisible(false);
         jp_addjug.setVisible(false);
         jp_addequip.setVisible(false);
         jp_addestadio.setVisible(false);
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
-        jp_elimequipo.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         
         
     }
@@ -131,6 +136,20 @@ public class Admin extends javax.swing.JFrame {
         jb_modequipo1 = new javax.swing.JButton();
         cb_modequipos = new javax.swing.JComboBox<>();
         jl_title8 = new javax.swing.JLabel();
+        jp_simulacion = new javax.swing.JPanel();
+        jl_title14 = new javax.swing.JLabel();
+        jl_title15 = new javax.swing.JLabel();
+        jb_simulate = new javax.swing.JButton();
+        cb_secondteamsim = new javax.swing.JComboBox<>();
+        jl_title16 = new javax.swing.JLabel();
+        cb_firstteamsim = new javax.swing.JComboBox<>();
+        jp_Listar = new javax.swing.JPanel();
+        jl_title12 = new javax.swing.JLabel();
+        jl_title13 = new javax.swing.JLabel();
+        jb_genlist = new javax.swing.JButton();
+        cb_generarlista = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_Lista = new javax.swing.JTextArea();
         jp_elimequipo = new javax.swing.JPanel();
         jl_title10 = new javax.swing.JLabel();
         jl_title11 = new javax.swing.JLabel();
@@ -165,6 +184,11 @@ public class Admin extends javax.swing.JFrame {
         jb_simular.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
         jb_simular.setForeground(new java.awt.Color(255, 255, 255));
         jb_simular.setText("Simulacion");
+        jb_simular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_simularMouseClicked(evt);
+            }
+        });
         jp_main.add(jb_simular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 140, 30));
 
         jb_elimjugador.setBackground(new java.awt.Color(0, 51, 51));
@@ -274,6 +298,11 @@ public class Admin extends javax.swing.JFrame {
         jb_listar.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
         jb_listar.setForeground(new java.awt.Color(255, 255, 255));
         jb_listar.setText("Listar");
+        jb_listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_listarMouseClicked(evt);
+            }
+        });
         jp_main.add(jb_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 140, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -976,6 +1005,159 @@ public class Admin extends javax.swing.JFrame {
 
         jp_main.add(jp_modequip, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 10, 680, 510));
 
+        jp_simulacion.setBackground(new java.awt.Color(204, 102, 0));
+
+        jl_title14.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_title14.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_title14.setText("SIMULACION");
+
+        jl_title15.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_title15.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jl_title15.setText("Seleccione el primer equipo:");
+
+        jb_simulate.setBackground(new java.awt.Color(0, 153, 255));
+        jb_simulate.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jb_simulate.setForeground(new java.awt.Color(255, 255, 255));
+        jb_simulate.setText("SIMULAR");
+        jb_simulate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_simulateMouseClicked(evt);
+            }
+        });
+
+        cb_secondteamsim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_secondteamsimActionPerformed(evt);
+            }
+        });
+
+        jl_title16.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_title16.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jl_title16.setText("Seleccione el segundo equipo:");
+
+        cb_firstteamsim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_firstteamsimActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_simulacionLayout = new javax.swing.GroupLayout(jp_simulacion);
+        jp_simulacion.setLayout(jp_simulacionLayout);
+        jp_simulacionLayout.setHorizontalGroup(
+            jp_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_simulacionLayout.createSequentialGroup()
+                .addGroup(jp_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_simulacionLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jl_title14, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_simulacionLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jp_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_title15, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_title16, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_secondteamsim, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_firstteamsim, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_simulate, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(215, Short.MAX_VALUE))
+        );
+        jp_simulacionLayout.setVerticalGroup(
+            jp_simulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_simulacionLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jl_title14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_title15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cb_firstteamsim, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jl_title16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cb_secondteamsim, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jb_simulate, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(175, Short.MAX_VALUE))
+        );
+
+        jp_main.add(jp_simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 10, 680, 510));
+
+        jp_Listar.setBackground(new java.awt.Color(204, 102, 0));
+
+        jl_title12.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_title12.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_title12.setText("Lista");
+
+        jl_title13.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_title13.setForeground(new java.awt.Color(255, 255, 255));
+        jl_title13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_title13.setText("Seleccione la lista que quiere generar:");
+
+        jb_genlist.setBackground(new java.awt.Color(0, 153, 255));
+        jb_genlist.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jb_genlist.setForeground(new java.awt.Color(255, 255, 255));
+        jb_genlist.setText("GENERAR LISTA");
+        jb_genlist.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_genlistMouseClicked(evt);
+            }
+        });
+
+        cb_generarlista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jugadores", "Equipos", "Estadios" }));
+        cb_generarlista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_generarlistaActionPerformed(evt);
+            }
+        });
+
+        ta_Lista.setColumns(20);
+        ta_Lista.setRows(5);
+        jScrollPane1.setViewportView(ta_Lista);
+
+        javax.swing.GroupLayout jp_ListarLayout = new javax.swing.GroupLayout(jp_Listar);
+        jp_Listar.setLayout(jp_ListarLayout);
+        jp_ListarLayout.setHorizontalGroup(
+            jp_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_ListarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jl_title13, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(155, 155, 155))
+            .addGroup(jp_ListarLayout.createSequentialGroup()
+                .addGroup(jp_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_ListarLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jl_title12, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_ListarLayout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(jb_genlist, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_ListarLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(cb_generarlista, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_ListarLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jp_ListarLayout.setVerticalGroup(
+            jp_ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_ListarLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jl_title12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_title13, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cb_generarlista, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jb_genlist, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jp_main.add(jp_Listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 10, 680, 510));
+
         jp_elimequipo.setBackground(new java.awt.Color(0, 102, 51));
 
         jl_title10.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
@@ -1216,13 +1398,16 @@ public class Admin extends javax.swing.JFrame {
 
             }
             cb_equipos.setModel(modelo);
+            jp_elimequipo.setVisible(false);
             jp_addjug.setVisible(true);
             jp_addequip.setVisible(false);
             jp_addestadio.setVisible(false);
             jp_modjugador.setVisible(false);
             jp_modequip.setVisible(false);
             jp_modestadio.setVisible(false);
-            jp_elimequipo.setVisible(false);
+            jp_elimestadio.setVisible(false);
+            jp_elimjug.setVisible(false);
+            jp_Listar.setVisible(false);
         }
         
         
@@ -1241,13 +1426,17 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_addequipoMouseClicked
 
     private void jb_agregarequipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarequipoMouseClicked
-        jp_addequip.setVisible(true);
+        jp_elimequipo.setVisible(false);
         jp_addjug.setVisible(false);
+        jp_addequip.setVisible(true);
         jp_addestadio.setVisible(false);
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
-        jp_elimequipo.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
     }//GEN-LAST:event_jb_agregarequipoMouseClicked
 
     private void tf_estadiociudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_estadiociudadActionPerformed
@@ -1272,13 +1461,17 @@ public class Admin extends javax.swing.JFrame {
             
         }
         else{
-            jp_addequip.setVisible(false);
+            jp_elimequipo.setVisible(false);
             jp_addjug.setVisible(false);
+            jp_addequip.setVisible(false);
             jp_addestadio.setVisible(true);
             jp_modjugador.setVisible(false);
             jp_modequip.setVisible(false);
             jp_modestadio.setVisible(false);
-            jp_elimequipo.setVisible(false);
+            jp_elimestadio.setVisible(false);
+            jp_elimjug.setVisible(false);
+            jp_Listar.setVisible(false);
+            jp_simulacion.setVisible(false);
             DefaultComboBoxModel modelo = ((DefaultComboBoxModel)cb_estadioequipo.getModel());
             for (Equipo equipo : equipos) {
                 modelo.addElement(equipo);
@@ -1316,13 +1509,17 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_ModJugadorActionPerformed
 
     private void jb_modificarjugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarjugadorMouseClicked
-        jp_modjugador.setVisible(true);
+        jp_elimequipo.setVisible(false);
         jp_addjug.setVisible(false);
         jp_addequip.setVisible(false);
         jp_addestadio.setVisible(false);
+        jp_modjugador.setVisible(true);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
-        jp_elimequipo.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = ((DefaultComboBoxModel)cb_jugadores.getModel());
             for (Jugador jug : jugadores) {
                 modelo.addElement(jug);
@@ -1355,13 +1552,17 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_modequipo1MouseClicked
 
     private void jb_modificarequipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarequipoMouseClicked
+        jp_elimequipo.setVisible(false);
         jp_addjug.setVisible(false);
         jp_addequip.setVisible(false);
         jp_addestadio.setVisible(false);
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(true);
         jp_modestadio.setVisible(false);
-        jp_elimequipo.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = ((DefaultComboBoxModel)cb_modequipos.getModel());
             for (Equipo equipo : equipos) {
                 modelo.addElement(equipo);
@@ -1386,13 +1587,17 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_ModEstadioMouseClicked
 
     private void jb_modificarestadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarestadioMouseClicked
+        jp_elimequipo.setVisible(false);
         jp_addjug.setVisible(false);
         jp_addequip.setVisible(false);
         jp_addestadio.setVisible(false);
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(true);
-        jp_elimequipo.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = ((DefaultComboBoxModel)cb_estadioequipo1.getModel());
             for (Estadio estadio : estadios) {
                 modelo.addElement(estadio);
@@ -1421,6 +1626,10 @@ public class Admin extends javax.swing.JFrame {
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Equipo equipo : equipos) {
             modelo.addElement(equipo);
@@ -1445,6 +1654,9 @@ public class Admin extends javax.swing.JFrame {
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
         jp_elimestadio.setVisible(true);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Estadio estadio : estadios) {
             modelo.addElement(estadio);
@@ -1469,6 +1681,8 @@ public class Admin extends javax.swing.JFrame {
         jp_modestadio.setVisible(false);
         jp_elimestadio.setVisible(false);
         jp_elimjug.setVisible(true);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(false);
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Jugador jugador : jugadores) {
             modelo.addElement(jugador);
@@ -1480,6 +1694,198 @@ public class Admin extends javax.swing.JFrame {
     private void jb_agregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_agregar1ActionPerformed
+
+    private void jb_genlistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_genlistMouseClicked
+        if (cb_generarlista.getSelectedIndex()==0){
+            String list ="";
+            for (Jugador jugadore : jugadores) {
+                list+= jugadore;
+                list+="\n";
+                
+            }
+            ta_Lista.setText(list);
+            
+        }
+        else if (cb_generarlista.getSelectedIndex()==1){
+            String list ="";
+            for (Equipo equipo : equipos) {
+                list+= equipo;
+                list+="\n";
+                
+            }
+            ta_Lista.setText(list);
+            
+        }
+        else if (cb_generarlista.getSelectedIndex()==2){
+            String list ="";
+            for (Estadio estadio : estadios) {
+                list+= estadio;
+                list+="\n";
+            }
+            ta_Lista.setText(list);
+            
+        }
+    }//GEN-LAST:event_jb_genlistMouseClicked
+
+    private void cb_generarlistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_generarlistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_generarlistaActionPerformed
+
+    private void jb_listarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarMouseClicked
+        jp_elimequipo.setVisible(false);
+        jp_addjug.setVisible(false);
+        jp_addequip.setVisible(false);
+        jp_addestadio.setVisible(false);
+        jp_modjugador.setVisible(false);
+        jp_modequip.setVisible(false);
+        jp_modestadio.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(true);
+        jp_simulacion.setVisible(false);
+        
+    }//GEN-LAST:event_jb_listarMouseClicked
+
+    private void jb_simulateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_simulateMouseClicked
+        Equipo a = (Equipo) cb_firstteamsim.getSelectedItem();
+        Equipo b = (Equipo) cb_secondteamsim.getSelectedItem();
+        String menor = "";
+        int proba = 0;
+        int probb = 0;
+        int goalsa = 0;
+        int goalsb = 0;
+        int dif = 0;
+        if(a.getRating()<=b.getRating()){
+            menor = "a";
+            
+        }
+        else{
+            menor = "b";
+            
+        }
+        
+        if (menor.equals("a")){
+            if (b.getRating()-a.getRating()<=10){
+                dif = b.getRating()-a.getRating();
+                dif = dif*4;
+                proba = dif;
+                probb = dif+1;
+                int nran = ran.nextInt(5);
+                
+                int goles = 0;
+                while (goles<nran){
+                    int nran2 = 1+ ran.nextInt(100);
+                    if (nran2 > 0 && nran2 <= proba){
+                        goalsa++;
+                        goles++;
+                    }
+                    else{
+                        goalsb++;
+                        goles++;
+                    }
+                }
+                
+            }
+            else{
+                dif = b.getRating()-a.getRating();
+                dif = dif*5;
+                probb = dif;
+                proba = dif-1;
+                int nran = ran.nextInt(10);
+                int goles = 0;
+                while (goles<nran){
+                    int nran2 = 1+ ran.nextInt(100);
+                    if (nran2 > 0 && nran2 <= proba){
+                        goalsa++;
+                        goles++;
+                    }
+                    else{
+                        goalsb++;
+                        goles++;
+                    }
+                }
+                
+            }
+        }
+        else if (menor.equals("b")){
+            if (a.getRating()-b.getRating()<=10){
+                dif = a.getRating()-b.getRating();
+                dif = dif*4;
+                probb = dif;
+                proba = dif+1;
+                int nran = ran.nextInt(5);
+                
+                int goles = 0;
+                while (goles<nran){
+                    int nran2 = 1+ ran.nextInt(100);
+                    if (nran2 > 0 && nran2 <= proba){
+                        goalsa++;
+                        goles++;
+                    }
+                    else{
+                        goalsb++;
+                        goles++;
+                    }
+                }
+                
+            }
+            else{
+                dif = a.getRating()-b.getRating();
+                dif = dif*5;
+                proba = dif;
+                probb = dif-1;
+                proba = dif-1;
+                int nran = ran.nextInt(10);
+                int goles = 0;
+                while (goles<nran){
+                    int nran2 = 1+ ran.nextInt(100);
+                    if (nran2 > 0 && nran2 <= proba){
+                        goalsa++;
+                        goles++;
+                    }
+                    else{
+                        goalsb++;
+                        goles++;
+                    }
+                }
+            }
+        }
+        
+        String temp = "";
+        temp+= "Resultados del partido: \n";
+        temp+= "Goles del Primer Equipo: "+goalsa;
+        temp+= "\nGoles del Segundo Equipo "+goalsb;
+        
+        JOptionPane.showMessageDialog(null, temp);
+                
+        
+        
+        
+                
+        
+    }//GEN-LAST:event_jb_simulateMouseClicked
+
+    private void cb_secondteamsimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_secondteamsimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_secondteamsimActionPerformed
+
+    private void cb_firstteamsimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_firstteamsimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_firstteamsimActionPerformed
+
+    private void jb_simularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_simularMouseClicked
+        jp_elimequipo.setVisible(false);
+        jp_addjug.setVisible(false);
+        jp_addequip.setVisible(false);
+        jp_addestadio.setVisible(false);
+        jp_modjugador.setVisible(false);
+        jp_modequip.setVisible(false);
+        jp_modestadio.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(false);
+        jp_Listar.setVisible(false);
+        jp_simulacion.setVisible(true);
+    }//GEN-LAST:event_jb_simularMouseClicked
 
     
    
@@ -1530,8 +1936,11 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_estadioequipo;
     private javax.swing.JComboBox<String> cb_estadioequipo1;
     private javax.swing.JComboBox<String> cb_estadioequipoelim;
+    private javax.swing.JComboBox<String> cb_firstteamsim;
+    private javax.swing.JComboBox<String> cb_generarlista;
     private javax.swing.JComboBox<String> cb_jugadores;
     private javax.swing.JComboBox<String> cb_modequipos;
+    private javax.swing.JComboBox<String> cb_secondteamsim;
     private javax.swing.JComboBox<String> cb_tipojug;
     private javax.swing.JFormattedTextField ff_edadjug;
     private javax.swing.JFormattedTextField ff_edadjug1;
@@ -1539,6 +1948,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb_ModEstadio;
     private javax.swing.JButton jb_ModEstadio1;
     private javax.swing.JButton jb_ModJugador;
@@ -1553,12 +1963,14 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JButton jb_elimestadio;
     private javax.swing.JButton jb_eliminarteam;
     private javax.swing.JButton jb_elimjugador;
+    private javax.swing.JButton jb_genlist;
     private javax.swing.JButton jb_listar;
     private javax.swing.JButton jb_modequipo1;
     private javax.swing.JButton jb_modificarequipo;
     private javax.swing.JButton jb_modificarestadio;
     private javax.swing.JButton jb_modificarjugador;
     private javax.swing.JButton jb_simular;
+    private javax.swing.JButton jb_simulate;
     private javax.swing.JLabel jl_addestadioname;
     private javax.swing.JLabel jl_addestadioname1;
     private javax.swing.JLabel jl_edad;
@@ -1584,6 +1996,11 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_tipo2;
     private javax.swing.JLabel jl_title10;
     private javax.swing.JLabel jl_title11;
+    private javax.swing.JLabel jl_title12;
+    private javax.swing.JLabel jl_title13;
+    private javax.swing.JLabel jl_title14;
+    private javax.swing.JLabel jl_title15;
+    private javax.swing.JLabel jl_title16;
     private javax.swing.JLabel jl_title2;
     private javax.swing.JLabel jl_title3;
     private javax.swing.JLabel jl_title4;
@@ -1594,6 +2011,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_titleaddestadio;
     private javax.swing.JLabel jl_titleaddestadio1;
     private javax.swing.JLabel jl_titleaddestadio2;
+    private javax.swing.JPanel jp_Listar;
     private javax.swing.JPanel jp_addequip;
     private javax.swing.JPanel jp_addestadio;
     private javax.swing.JPanel jp_addjug;
@@ -1604,6 +2022,8 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel jp_modequip;
     private javax.swing.JPanel jp_modestadio;
     private javax.swing.JPanel jp_modjugador;
+    private javax.swing.JPanel jp_simulacion;
+    private javax.swing.JTextArea ta_Lista;
     private javax.swing.JTextField tf_equiponombre;
     private javax.swing.JTextField tf_equiponombre1;
     private javax.swing.JTextField tf_equipopais;

@@ -135,7 +135,7 @@ public abstract class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador: [Nombre: "+nombre+"]" + "[Nacionalidad: "+nacionalidad+"]" + "[Piehabil: "+pieh+"]" + "[Edad: "+edad+"]" ;
+        return "Jugador: [Nombre: "+nombre+"] " + "[Nacionalidad: "+nacionalidad+"] " + "[Piehabil: "+pieh+"] " + "[Edad: "+edad+"]" ;
     }
     
     

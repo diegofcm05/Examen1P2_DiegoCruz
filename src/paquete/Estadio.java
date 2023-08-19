@@ -60,7 +60,7 @@ public class Estadio {
 
     @Override
     public String toString() {
-        return "Estadio: [Nombre: " + nombre+"]" +"[Ciudad: "+ ciudad+"]" + "[Capacidad: "+ capacidad+"]" + " [Equipo: "+ equipo.getNombre()+"]";
+        return "Estadio: [Nombre: " + nombre+"] " +"[Ciudad: "+ ciudad+"] " + "[Capacidad: "+ capacidad+"] " + " [Equipo: "+ equipo.getNombre()+"]";
     }
     
     
