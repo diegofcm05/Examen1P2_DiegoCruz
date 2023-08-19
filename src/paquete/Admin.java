@@ -60,6 +60,11 @@ public class Admin extends javax.swing.JFrame {
         jb_elimestadio = new javax.swing.JButton();
         jb_listar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jp_elimestadio = new javax.swing.JPanel();
+        jl_titleaddestadio2 = new javax.swing.JLabel();
+        jb_ModEstadio1 = new javax.swing.JButton();
+        jl_estadioequipo2 = new javax.swing.JLabel();
+        cb_estadioequipoelim = new javax.swing.JComboBox<>();
         jp_modestadio = new javax.swing.JPanel();
         jl_estadiociudad1 = new javax.swing.JLabel();
         jl_titleaddestadio1 = new javax.swing.JLabel();
@@ -82,6 +87,11 @@ public class Admin extends javax.swing.JFrame {
         jl_estadioequipo = new javax.swing.JLabel();
         tf_estadiocap = new javax.swing.JTextField();
         cb_estadioequipo = new javax.swing.JComboBox<>();
+        jp_elimjug = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jl_tipo2 = new javax.swing.JLabel();
+        jb_agregar1 = new javax.swing.JButton();
+        cb_elimjug = new javax.swing.JComboBox<>();
         jp_addjug = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jl_tipo = new javax.swing.JLabel();
@@ -161,6 +171,11 @@ public class Admin extends javax.swing.JFrame {
         jb_elimjugador.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
         jb_elimjugador.setForeground(new java.awt.Color(255, 255, 255));
         jb_elimjugador.setText("Eliminar Jugador");
+        jb_elimjugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_elimjugadorMouseClicked(evt);
+            }
+        });
         jp_main.add(jb_elimjugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 140, 30));
 
         jb_modificarestadio.setBackground(new java.awt.Color(0, 51, 51));
@@ -243,6 +258,11 @@ public class Admin extends javax.swing.JFrame {
         jb_elimestadio.setFont(new java.awt.Font("Roboto Medium", 1, 12)); // NOI18N
         jb_elimestadio.setForeground(new java.awt.Color(255, 255, 255));
         jb_elimestadio.setText("Eliminar Estadio");
+        jb_elimestadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_elimestadioMouseClicked(evt);
+            }
+        });
         jb_elimestadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_elimestadioActionPerformed(evt);
@@ -262,6 +282,67 @@ public class Admin extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("FIFA MENU");
         jp_main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 30));
+
+        jp_elimestadio.setBackground(new java.awt.Color(153, 153, 255));
+
+        jl_titleaddestadio2.setBackground(new java.awt.Color(0, 153, 255));
+        jl_titleaddestadio2.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_titleaddestadio2.setForeground(new java.awt.Color(255, 255, 255));
+        jl_titleaddestadio2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_titleaddestadio2.setText("MODIFICAR ESTADIO");
+
+        jb_ModEstadio1.setBackground(new java.awt.Color(153, 0, 153));
+        jb_ModEstadio1.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jb_ModEstadio1.setForeground(new java.awt.Color(255, 255, 255));
+        jb_ModEstadio1.setText("ELIMINAR");
+        jb_ModEstadio1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ModEstadio1MouseClicked(evt);
+            }
+        });
+
+        jl_estadioequipo2.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jl_estadioequipo2.setForeground(new java.awt.Color(255, 255, 255));
+        jl_estadioequipo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_estadioequipo2.setText("Seleccione el estadio a eliminar:");
+
+        javax.swing.GroupLayout jp_elimestadioLayout = new javax.swing.GroupLayout(jp_elimestadio);
+        jp_elimestadio.setLayout(jp_elimestadioLayout);
+        jp_elimestadioLayout.setHorizontalGroup(
+            jp_elimestadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_elimestadioLayout.createSequentialGroup()
+                .addGroup(jp_elimestadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_elimestadioLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(jl_titleaddestadio2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_elimestadioLayout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jb_ModEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(243, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_elimestadioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cb_estadioequipoelim, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jp_elimestadioLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(jl_estadioequipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_elimestadioLayout.setVerticalGroup(
+            jp_elimestadioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_elimestadioLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jl_titleaddestadio2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addComponent(jl_estadioequipo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(cb_estadioequipoelim, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(jb_ModEstadio1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+        );
+
+        jp_main.add(jp_elimestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 10, 690, 510));
 
         jp_modestadio.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -475,6 +556,69 @@ public class Admin extends javax.swing.JFrame {
         );
 
         jp_main.add(jp_addestadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 10, 690, 510));
+
+        jp_elimjug.setBackground(new java.awt.Color(0, 153, 204));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("ELIMINAR JUGADOR");
+
+        jl_tipo2.setBackground(new java.awt.Color(0, 0, 0));
+        jl_tipo2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jl_tipo2.setForeground(new java.awt.Color(0, 0, 0));
+        jl_tipo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_tipo2.setText("Seleccione el jugador a eliminar");
+
+        jb_agregar1.setBackground(new java.awt.Color(0, 153, 0));
+        jb_agregar1.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jb_agregar1.setForeground(new java.awt.Color(0, 0, 0));
+        jb_agregar1.setText("ELIMINAR");
+        jb_agregar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_agregar1MouseClicked(evt);
+            }
+        });
+        jb_agregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_agregar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_elimjugLayout = new javax.swing.GroupLayout(jp_elimjug);
+        jp_elimjug.setLayout(jp_elimjugLayout);
+        jp_elimjugLayout.setHorizontalGroup(
+            jp_elimjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_elimjugLayout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addGroup(jp_elimjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_elimjugLayout.createSequentialGroup()
+                        .addComponent(jl_tipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(174, 174, 174))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_elimjugLayout.createSequentialGroup()
+                        .addComponent(cb_elimjug, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(124, 124, 124))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_elimjugLayout.createSequentialGroup()
+                        .addComponent(jb_agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(255, 255, 255))))
+        );
+        jp_elimjugLayout.setVerticalGroup(
+            jp_elimjugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_elimjugLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jl_tipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cb_elimjug, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(jb_agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
+        );
+
+        jp_main.add(jp_elimjug, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 690, 520));
 
         jp_addjug.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -1286,6 +1430,57 @@ public class Admin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jb_elimequipoMouseClicked
 
+    private void jb_ModEstadio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ModEstadio1MouseClicked
+        estadios.remove(cb_estadioequipoelim.getSelectedIndex());
+        JOptionPane.showMessageDialog(this, "Estadio eliminado exitosamente!");
+        jp_elimestadio.setVisible(false);
+    }//GEN-LAST:event_jb_ModEstadio1MouseClicked
+
+    private void jb_elimestadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elimestadioMouseClicked
+        jp_elimequipo.setVisible(false);
+        jp_addjug.setVisible(false);
+        jp_addequip.setVisible(false);
+        jp_addestadio.setVisible(false);
+        jp_modjugador.setVisible(false);
+        jp_modequip.setVisible(false);
+        jp_modestadio.setVisible(false);
+        jp_elimestadio.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Estadio estadio : estadios) {
+            modelo.addElement(estadio);
+
+        }
+        cb_estadioequipoelim.setModel(modelo);
+    }//GEN-LAST:event_jb_elimestadioMouseClicked
+
+    private void jb_agregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregar1MouseClicked
+        jugadores.remove(cb_elimjug.getSelectedIndex());
+        JOptionPane.showMessageDialog(this, "Jugador eliminado exitosamente!");
+        jp_elimjug.setVisible(false);
+    }//GEN-LAST:event_jb_agregar1MouseClicked
+
+    private void jb_elimjugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elimjugadorMouseClicked
+        jp_elimequipo.setVisible(false);
+        jp_addjug.setVisible(false);
+        jp_addequip.setVisible(false);
+        jp_addestadio.setVisible(false);
+        jp_modjugador.setVisible(false);
+        jp_modequip.setVisible(false);
+        jp_modestadio.setVisible(false);
+        jp_elimestadio.setVisible(false);
+        jp_elimjug.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Jugador jugador : jugadores) {
+            modelo.addElement(jugador);
+
+        }
+        cb_elimjug.setModel(modelo);
+    }//GEN-LAST:event_jb_elimjugadorMouseClicked
+
+    private void jb_agregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_agregar1ActionPerformed
+
     
    
     
@@ -1329,10 +1524,12 @@ public class Admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_elimequip;
+    private javax.swing.JComboBox<String> cb_elimjug;
     private javax.swing.JComboBox<String> cb_equipos;
     private javax.swing.JComboBox<String> cb_equipos1;
     private javax.swing.JComboBox<String> cb_estadioequipo;
     private javax.swing.JComboBox<String> cb_estadioequipo1;
+    private javax.swing.JComboBox<String> cb_estadioequipoelim;
     private javax.swing.JComboBox<String> cb_jugadores;
     private javax.swing.JComboBox<String> cb_modequipos;
     private javax.swing.JComboBox<String> cb_tipojug;
@@ -1341,12 +1538,15 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jb_ModEstadio;
+    private javax.swing.JButton jb_ModEstadio1;
     private javax.swing.JButton jb_ModJugador;
     private javax.swing.JButton jb_addequipo;
     private javax.swing.JButton jb_addestadio;
     private javax.swing.JButton jb_addjugador;
     private javax.swing.JButton jb_agregar;
+    private javax.swing.JButton jb_agregar1;
     private javax.swing.JButton jb_agregarequipo;
     private javax.swing.JButton jb_agregarestadio;
     private javax.swing.JButton jb_elimequipo;
@@ -1369,6 +1569,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_estadiociudad1;
     private javax.swing.JLabel jl_estadioequipo;
     private javax.swing.JLabel jl_estadioequipo1;
+    private javax.swing.JLabel jl_estadioequipo2;
     private javax.swing.JLabel jl_fondo;
     private javax.swing.JLabel jl_nacionalidad;
     private javax.swing.JLabel jl_nacionalidad1;
@@ -1380,6 +1581,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_piehabil3;
     private javax.swing.JLabel jl_tipo;
     private javax.swing.JLabel jl_tipo1;
+    private javax.swing.JLabel jl_tipo2;
     private javax.swing.JLabel jl_title10;
     private javax.swing.JLabel jl_title11;
     private javax.swing.JLabel jl_title2;
@@ -1391,10 +1593,13 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jl_title8;
     private javax.swing.JLabel jl_titleaddestadio;
     private javax.swing.JLabel jl_titleaddestadio1;
+    private javax.swing.JLabel jl_titleaddestadio2;
     private javax.swing.JPanel jp_addequip;
     private javax.swing.JPanel jp_addestadio;
     private javax.swing.JPanel jp_addjug;
     private javax.swing.JPanel jp_elimequipo;
+    private javax.swing.JPanel jp_elimestadio;
+    private javax.swing.JPanel jp_elimjug;
     private javax.swing.JPanel jp_main;
     private javax.swing.JPanel jp_modequip;
     private javax.swing.JPanel jp_modestadio;
