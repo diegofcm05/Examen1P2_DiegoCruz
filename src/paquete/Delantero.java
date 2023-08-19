@@ -15,6 +15,16 @@ public class Delantero extends Jugador{
     Random ran = new Random();
 
     public Delantero() {
+        setAgarre();
+        setLanzamiento();
+        setFisico();
+        setRitmo();
+        setEntrada();
+        setVision();
+        setPassing();
+        setRegate();
+        setDisparo();
+        setRating();
     }
 
     public Delantero(String nombre, String nacionalidad, String pieh, int edad) {

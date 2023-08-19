@@ -15,6 +15,16 @@ public class Portero extends Jugador{
     Random ran = new Random();
 
     public Portero() {
+        setAgarre();
+        setLanzamiento();
+        setFisico();
+        setRitmo();
+        setEntrada();
+        setVision();
+        setPassing();
+        setRegate();
+        setDisparo();
+        setRating();
     }
     
     

@@ -3,6 +3,7 @@ package paquete;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -1003,14 +1004,15 @@ public class Admin extends javax.swing.JFrame {
         
         
         if (cb_tipojug.getSelectedIndex()==0){
-        Portero x = new Portero();
-        x.setNombre(tf_nomjug.getText());
-        x.setEdad(Integer.parseInt(ff_edadjug.getText()));
-        x.setNacionalidad(tf_nacionjug.getText());
-        x.setPieh(tf_piejug.getText());
-        equipos.get(cb_equipos.getSelectedIndex()).getPlantilla().add(x);
-        jugadores.add(x);
-        JOptionPane.showMessageDialog(this, "Jugador agregado exitosamente!");
+            Portero x = new Portero();
+            x.setNombre(tf_nomjug.getText());
+            x.setEdad(Integer.parseInt(ff_edadjug.getText()));
+            x.setNacionalidad(tf_nacionjug.getText());
+            x.setPieh(tf_piejug.getText());
+            equipos.get(cb_equipos.getSelectedIndex()).getPlantilla().add(x);
+            jugadores.add(x);
+            equipos.get(cb_equipos.getSelectedIndex()).setRating();
+            JOptionPane.showMessageDialog(this, "Jugador agregado exitosamente!");
             
             
         }
@@ -1023,6 +1025,7 @@ public class Admin extends javax.swing.JFrame {
             equipos.get(cb_equipos.getSelectedIndex()).getPlantilla().add(x);
             JOptionPane.showMessageDialog(this, "Jugador agregado exitosamente!");
             jugadores.add(x);
+            equipos.get(cb_equipos.getSelectedIndex()).setRating();
             
         }
         else if (cb_tipojug.getSelectedIndex()==2){
@@ -1034,6 +1037,7 @@ public class Admin extends javax.swing.JFrame {
             equipos.get(cb_equipos.getSelectedIndex()).getPlantilla().add(x);
             JOptionPane.showMessageDialog(this, "Jugador agregado exitosamente!");
             jugadores.add(x);
+            equipos.get(cb_equipos.getSelectedIndex()).setRating();
             
         }
         else if (cb_tipojug.getSelectedIndex()==3){
@@ -1045,6 +1049,7 @@ public class Admin extends javax.swing.JFrame {
             equipos.get(cb_equipos.getSelectedIndex()).getPlantilla().add(x);
             JOptionPane.showMessageDialog(this, "Jugador agregado exitosamente!");
             jugadores.add(x);
+            equipos.get(cb_equipos.getSelectedIndex()).setRating();
             
         }
         
@@ -1253,8 +1258,8 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_modificarestadioMouseClicked
 
     private void jb_eliminarteamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_eliminarteamMouseClicked
+        
         equipos.remove(cb_elimequip.getSelectedIndex());
-        cb_elimequip.remove(cb_elimequip.getSelectedIndex());
         JOptionPane.showMessageDialog(this, "Equipo eliminado exitosamente!");
         jp_elimequipo.setVisible(false);
         
@@ -1272,15 +1277,17 @@ public class Admin extends javax.swing.JFrame {
         jp_modjugador.setVisible(false);
         jp_modequip.setVisible(false);
         jp_modestadio.setVisible(false);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Equipo equipo : equipos) {
+            modelo.addElement(equipo);
 
-        DefaultComboBoxModel modelo = ((DefaultComboBoxModel)cb_elimequip.getModel());
-            for (Equipo equipo : equipos) {
-                modelo.addElement(equipo);
+        }
+        cb_elimequip.setModel(modelo);
 
-            }
-            cb_elimequip.setModel(modelo);
     }//GEN-LAST:event_jb_elimequipoMouseClicked
 
+    
+   
     
     
     /**

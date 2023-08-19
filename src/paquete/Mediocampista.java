@@ -30,6 +30,16 @@ public class Mediocampista extends Jugador{
     }
 
     public Mediocampista() {
+        setAgarre();
+        setLanzamiento();
+        setFisico();
+        setRitmo();
+        setEntrada();
+        setVision();
+        setPassing();
+        setRegate();
+        setDisparo();
+        setRating();
     }
     
     

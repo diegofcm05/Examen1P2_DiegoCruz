@@ -30,6 +30,16 @@ public class Defensa extends Jugador{
     }
 
     public Defensa() {
+        setAgarre();
+        setLanzamiento();
+        setFisico();
+        setRitmo();
+        setEntrada();
+        setVision();
+        setPassing();
+        setRegate();
+        setDisparo();
+        setRating();
     }
     
     
