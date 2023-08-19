@@ -1885,6 +1885,20 @@ public class Admin extends javax.swing.JFrame {
         jp_elimjug.setVisible(false);
         jp_Listar.setVisible(false);
         jp_simulacion.setVisible(true);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Equipo equipo : equipos) {
+                modelo.addElement(equipo);
+            
+            }
+            cb_firstteamsim.setModel(modelo);
+          
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+            for (Equipo equipo : equipos) {
+                modelo2.addElement(equipo);
+            
+            }
+            cb_secondteamsim.setModel(modelo2);    
+            
     }//GEN-LAST:event_jb_simularMouseClicked
 
     
